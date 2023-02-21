@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+.header{
+    width: 100vw;
+    margin-bottom: 50px;
+}
+.header-nav{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 15px 15px;
+}
+.nav-logo{
+    font-size: 30px;
+    font-weight: 700;
+}
+.nav-menu{
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+.nav-menu-a{
+    font-size: 20px;
+}
+.nav-login{
+    border-radius: 20px;
+    background-color: rgb(45, 105, 225);
+    color: aliceblue;
+    padding: 10px;
+}
+.content-info-product{
+    max-width: 1000px;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    margin: auto;
+}
+.content-product{
+    width: 280px;
+    border: 1px solid #333333;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 20px;
+}
+.imagen-product{
+    width: 100%;
+}
+.imagen-product img{
+    width: 100%;
+}
+.content-product hr{
+    margin: 3px 0;
+}
+.precio-product{
+    font-weight: 600;
+}
+.btn-ver-produc{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+.btn-produc{
+    padding: 10px;
+    background-color: aquamarine;
+    border: 1px solid #333333;
+    border-radius: 20px;
+    cursor: pointer;
+}
