@@ -1,10 +1,10 @@
 <?php
-$ajax = false;
-require_once "./controller/gestionController.php";
-$gestion = new gestionController();
+    $ajax = false;
+    require_once "./controller/gestionController.php";
+    $gestion = new gestionController();
 
-// Lista de productos
-$lista = $gestion->ListarProductos();
+    // Lista de productos
+    $lista = $gestion->ListarProductos();
 ?>
 
 <header class="header">
