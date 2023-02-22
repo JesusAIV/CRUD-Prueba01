@@ -27,7 +27,7 @@ require_once "core/constantes.php";
 
     <?php require_once $vistas; ?>
 
-    <script src="<?php echo SERVERURL ?>assets/js/index.js"></script>
+    <script src="<?php echo SERVERURL ?>view/assets/js/index.js"></script>
 </body>
 
 </html>
