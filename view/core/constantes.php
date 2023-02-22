@@ -1,2 +1,2 @@
 <?php
-    const SERVERURL = "http://localhost:8085/Project01/"; // Cambiar según la url princicpal
+    const SERVERURL = "http://localhost:8085/CRUD-Prueba01/"; // Cambiar según la url princicpal
