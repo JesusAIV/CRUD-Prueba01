@@ -33,7 +33,7 @@
                     "Texto"=>"Debe ingresar sus datos",
                     "Tipo"=>"error"
                 ];
-                return mainModel::sweet_alert($alerta);
+                // return mainModel::sweet_alert($alerta);
             }else{
                 if($rowCount==1){
                     session_start();
@@ -49,7 +49,7 @@
                         "Texto"=>"Datos incorrectos",
                         "Tipo"=>"error"
                     ];
-                    return mainModel::sweet_alert($alerta);
+                    // return mainModel::sweet_alert($alerta);
                 }
             }
         }
