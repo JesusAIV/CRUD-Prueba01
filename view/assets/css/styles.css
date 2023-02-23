@@ -74,3 +74,25 @@
     border-radius: 20px;
     cursor: pointer;
 }
+.tabla-produc-admin{
+    width: 60%;
+    margin: auto;
+    padding: 20px;
+}
+.table-image img{
+    width: 150px;
+}
+tr, th, td{
+    border: 1px solid #333333;
+}
+.tabla-produc-admin th{
+    padding: 10px;
+}
+.tabla-produc-admin .table-image{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.center-flex{
+    text-align: center;
+}
