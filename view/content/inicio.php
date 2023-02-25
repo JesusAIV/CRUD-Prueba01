@@ -1,7 +1,9 @@
 <?php
     $ajax = false;
     require_once "./controller/gestionController.php";
+    require_once "./models/main.php";
     $gestion = new gestionController();
+    $main = new Main();
 
     // Lista de productos
     $lista = $gestion->ListarProductos();
@@ -39,7 +41,7 @@
         </div>
         <hr>
         <div class="btn-ver-produc">
-            <input type="submit" class="btn-produc" value="Ver producto">
+            <a class="btn-produc" href="<?php echo SERVERURL.'producto/'.$main->unirnombre($result -> nombre) ?>">Ver producto</a>
         </div>
     </div>
     <?php } ?>

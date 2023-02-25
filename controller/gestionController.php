@@ -21,4 +21,16 @@ class gestionController extends Main{
         return $resultado;
     }
 
+    public function DatosProducto($nombreproducto){
+
+        $conexion = Conexion::conectar();
+        $sql = "DatosProducto('$nombreproducto')";
+        $query = $conexion->prepare($sql);
+        $query -> execute();
+
+        $resultado = $query -> fetchAll(PDO::FETCH_OBJ);
+
+        return $resultado;
+    }
+
 }
