@@ -10,35 +10,39 @@
 <div class="panel">
     <div class="cont-tabla">
         <table class="tabla-produc-admin">
-            <tr>
-                <th>Nombre</th>
-                <th>Precio</th>
-                <th>Imagen</th>
-                <th colspan="2">Acciones</th>
-            </tr>
-            <?php foreach ($lista as $result){ ?>
-            <tr>
-                <td class="center-flex">
-                    <div><?php echo $result -> nombre; ?></div>
-                </td>
-                <td class="center-flex">
-                    <div>S/.<?php echo $result -> precio; ?></div>
-                </td>
-                <td class="table-image">
-                    <img src="<?php echo SERVERURL.'view/'.$result -> imagen ?>" alt="">
-                </td>
-                <td class="center-flex">
-                    <a href="#">
-                        <img src="<?php echo SERVERURL.'view/assets/img/svg/delete.svg' ?>" alt="">
-                    </a>
-                </td>
-                <td class="center-flex">
-                    <a href="#">
-                        <img src="<?php echo SERVERURL.'view/assets/img/svg/edit.svg' ?>" alt="">
-                    </a>
-                </td>
-            </tr>
-            <?php } ?>
+            <thead class="thead-table">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Imagen</th>
+                    <th colspan="2">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($lista as $result){ ?>
+                <tr>
+                    <td class="center-flex">
+                        <div><?php echo $result -> nombre; ?></div>
+                    </td>
+                    <td class="center-flex">
+                        <div>S/.<?php echo $result -> precio; ?></div>
+                    </td>
+                    <td class="table-image">
+                        <img src="<?php echo SERVERURL.'view/'.$result -> imagen ?>" alt="">
+                    </td>
+                    <td class="center-flex">
+                        <a href="#">
+                            <img src="<?php echo SERVERURL.'view/assets/img/svg/delete.svg' ?>" alt="">
+                        </a>
+                    </td>
+                    <td class="center-flex">
+                        <a href="#">
+                            <img src="<?php echo SERVERURL.'view/assets/img/svg/edit.svg' ?>" alt="">
+                        </a>
+                    </td>
+                </tr>
+                <?php } ?>
+            </tbody>
         </table>
     </div>
     <div class="cont-formulario">
@@ -54,11 +58,16 @@
                 </div>
                 <div class="campo campo-imagen">
                     <label for="nombre-produc">Imagen</label>
-                    <input type="file" style="display: none;" id="nombre-prod">
-                    <label class="btn_image" for="nombre-prod">Selecciona imagen</label>
+                    <div>
+                        <input type="file" style="display: none;" id="nombre-prod">
+                        <label class="btn_image" for="nombre-prod">Selecciona imagen</label>
+                    </div>
                 </div>
                 <div class="campo campo-image-preview">
                     <img src="<?php echo SERVERURL.'view/assets/img/noimage.jpg' ?>" alt="">
+                </div>
+                <div class="campo campo-guardar">
+                    <input type="submit" value="Guardar">
                 </div>
             </form>
         </div>
