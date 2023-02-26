@@ -107,6 +107,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
 .form-input{
     display: grid;
@@ -142,9 +143,13 @@
     background-color: cadetblue;
     cursor: pointer;
 }
-.tabla-produc-admin tr{
+.tabla-produc-admin{
+    border: 1px solid #333333;
+}
+.tabla-produc-admin tr,
+.tabla-produc-admin td{
     border-top: 1px solid #000000;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #333333 !important;
 }
 .tabla-produc-admin th{
     display: none;
@@ -185,24 +190,23 @@
     }
 }
 .tabla-produc-admin {
-    background: #5a8ac0;
-    color: #fff;
+    background: #ffffff;
+    color: #000000;
     border-radius: 0.4em;
     overflow: hidden;
 }
 .tabla-produc-admin tr {
     border-color: #46637f;
 }
-.tabla-produc-admin th, .tabla-produc-admin td {
-    margin: 0.5em 1em;
-}
+
 @media (min-width: 480px) {
     .tabla-produc-admin th, .tabla-produc-admin td {
         padding: 1em !important;
 }
 }
 .tabla-produc-admin th, .tabla-produc-admin td:before {
-    color: #dd5;
+    color: #000000;
+    border-bottom: 1px solid #333333 !important;
 }
 .tabla-produc-admin tr,
 .tabla-produc-admin tbody,
@@ -212,5 +216,17 @@
     border-color: inherit;
     border-style: solid;
     border-width: 0;
-    border: 1px solid #333333;
+}
+.btnacciones{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.btn-accion button{
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #6176eb;
+    border: none;
+    cursor: pointer;
 }

@@ -11,6 +11,7 @@ require_once "core/constantes.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Proyecto 01</title>
     <link rel="stylesheet" href="<?php echo SERVERURL ?>view/assets/css/styles.css" />
+    <script src="<?php echo SERVERURL?>view/assets/js/jquery-3.6.3.min.js"></script>
 </head>
 
 <body>

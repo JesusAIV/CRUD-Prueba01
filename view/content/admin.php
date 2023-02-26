@@ -12,6 +12,7 @@
         <table class="tabla-produc-admin">
             <thead class="thead-table">
                 <tr>
+                    <th>ID</th>
                     <th>Nombre</th>
                     <th>Precio</th>
                     <th>Imagen</th>
@@ -21,22 +22,17 @@
             <tbody>
                 <?php foreach ($lista as $result){ ?>
                 <tr>
+                    <td class="center-flex"><?php echo $result -> id?></td>
+                    <td class="center-flex"><?php echo $result -> nombre; ?></td>
+                    <td class="center-flex">S/.<?php echo $result -> precio; ?></td>
+                    <td class="table-image"><img class="image-img" src="<?php echo SERVERURL.'view/'.$result -> imagen ?>" alt=""></td>
                     <td class="center-flex">
-                        <div><?php echo $result -> nombre; ?></div>
-                    </td>
-                    <td class="center-flex">
-                        <div>S/.<?php echo $result -> precio; ?></div>
-                    </td>
-                    <td class="table-image">
-                        <img src="<?php echo SERVERURL.'view/'.$result -> imagen ?>" alt="">
-                    </td>
-                    <td class="center-flex">
-                        <a href="#">
+                        <a href="" id="delete">
                             <img src="<?php echo SERVERURL.'view/assets/img/svg/delete.svg' ?>" alt="">
                         </a>
                     </td>
                     <td class="center-flex">
-                        <a href="#">
+                        <a href="" class="editar" data-id="<?php echo $result -> id ?>">
                             <img src="<?php echo SERVERURL.'view/assets/img/svg/edit.svg' ?>" alt="">
                         </a>
                     </td>
@@ -47,27 +43,33 @@
     </div>
     <div class="cont-formulario">
         <div class="formulario">
+            <div class="btnacciones">
+                <div class="btn-accion">
+                    <button class="button-accion-new" id="new-produc">Nuevo producto</button>
+                </div>
+            </div>
             <form action="" method="POST" class="form-input">
+                <input type="text" name="id-produc" id="id-produc" style="display: none;">
                 <div class="campo campo-nombre">
                     <label for="nombre-produc">Nombre</label>
-                    <input type="text">
+                    <input type="text" id="name">
                 </div>
                 <div class="campo campo-precio">
                     <label for="nombre-produc">Precio</label>
-                    <input type="number">
+                    <input type="text" id="price">
                 </div>
                 <div class="campo campo-imagen">
                     <label for="nombre-produc">Imagen</label>
                     <div>
-                        <input type="file" style="display: none;" id="nombre-prod">
-                        <label class="btn_image" for="nombre-prod">Selecciona imagen</label>
+                        <input type="file" style="display: none;" id="imagen-prod">
+                        <label class="btn_image" for="imagen-prod">Selecciona imagen</label>
                     </div>
                 </div>
                 <div class="campo campo-image-preview">
-                    <img src="<?php echo SERVERURL.'view/assets/img/noimage.jpg' ?>" alt="">
+                    <img id="uppimagensrc" width="300" src="<?php echo SERVERURL.'view/assets/img/noimage.jpg' ?>" alt="">
                 </div>
                 <div class="campo campo-guardar">
-                    <input type="submit" value="Guardar">
+                    <input id="btn-guardar" type="submit" value="Guardar">
                 </div>
             </form>
         </div>
