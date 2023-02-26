@@ -74,11 +74,6 @@
     border-radius: 20px;
     cursor: pointer;
 }
-.tabla-produc-admin{
-    width: 60%;
-    margin: auto;
-    padding: 20px;
-}
 .table-image img{
     width: 150px;
 }
@@ -95,4 +90,33 @@ tr, th, td{
 }
 .center-flex{
     text-align: center;
+}
+.panel{
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: auto auto;
+}
+.cont-formulario{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.formulario{
+    padding: 10px;
+    background-color: antiquewhite;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.form-input{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr auto;
+    gap: 10px;
+}
+.btn_image{
+    padding: 10px;
+    background-color: aquamarine;
+    border-radius: 10px;
 }

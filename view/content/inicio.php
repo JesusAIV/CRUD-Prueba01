@@ -7,6 +7,7 @@
 
     // Lista de productos
     $lista = $gestion->ListarProductos();
+
 ?>
 
 <header class="header">

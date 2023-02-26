@@ -1,4 +1,4 @@
-<?php
+<?php /*
     $ajax = false;
 
     require_once "./controller/gestionController.php";
@@ -18,4 +18,4 @@
 
 <?php foreach ($lista as $result){ ?>
 <div><?php echo $result -> nombre ?></div>
-<?php } ?>
+<?php } */ ?>
