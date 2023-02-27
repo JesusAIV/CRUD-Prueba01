@@ -30,17 +30,7 @@
         $("#imagen-prod").change(function () {
             var img = this.files[0];
 
-            if (img["type"] != "image/jpeg" && img["type"] != "image/png") {
 
-                $("#imagen-prod").val("");
-                alert("Error al subir la imagen, La imagen debe estar en formato JPG o PNG");
-
-            } else if (Number(img["size"]) > 2000000) {
-                $("#imagen-prod").val("");
-                alert("Error al subir la imagen, La imagen no debe pesar más de 2 MB!");
-
-
-            } else {
 
                 var imagen = new FileReader;
                 console.log("imagen ", imagen);
@@ -53,8 +43,8 @@
 
                 })
 
-            }
 
         })
+
     });
 })()

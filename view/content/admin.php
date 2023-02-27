@@ -24,7 +24,7 @@
                 <tr>
                     <td class="center-flex"><?php echo $result -> id?></td>
                     <td class="center-flex"><?php echo $result -> nombre; ?></td>
-                    <td class="center-flex">S/.<?php echo $result -> precio; ?></td>
+                    <td class="center-flex"><?php echo $result -> precio; ?></td>
                     <td class="table-image"><img class="image-img" src="<?php echo SERVERURL.'view/'.$result -> imagen ?>" alt=""></td>
                     <td class="center-flex">
                         <a href="" id="delete">
@@ -48,21 +48,21 @@
                     <button class="button-accion-new" id="new-produc">Nuevo producto</button>
                 </div>
             </div>
-            <form action="" method="POST" class="form-input">
+            <form action="<?php echo SERVERURL.'view/action/gestion.php' ?>" method="POST" class="form-input" enctype="multipart/form-data">
                 <input type="text" name="id-produc" id="id-produc" style="display: none;">
                 <div class="campo campo-nombre">
                     <label for="nombre-produc">Nombre</label>
-                    <input type="text" id="name">
+                    <input type="text" id="name" name="name">
                 </div>
                 <div class="campo campo-precio">
                     <label for="nombre-produc">Precio</label>
-                    <input type="text" id="price">
+                    <input type="text" id="price" name="price">
                 </div>
                 <div class="campo campo-imagen">
                     <label for="nombre-produc">Imagen</label>
                     <div>
-                        <input type="file" style="display: none;" id="imagen-prod">
                         <label class="btn_image" for="imagen-prod">Selecciona imagen</label>
+                        <input type="file" id="imagen-prod" name="imagen-produc">
                     </div>
                 </div>
                 <div class="campo campo-image-preview">

@@ -10,5 +10,19 @@
     }
 
     class gestionModel extends Main{
-        
+        protected function actualizarProducto($datos){
+            $conexion = Conexion::conectar();
+
+            $idproducto=$datos['idproducto'];
+            $nombre=$datos['nombre'];
+            $imagen=$datos['imagen'];
+            $precio=$datos['precio'];
+
+            $sql = "CALL UpdateProducto('$idproducto', '$nombre', '$imagen', '$precio')";
+
+            $result = $conexion->prepare($sql);
+            $result -> execute();
+
+            return $result;
+        }
     }

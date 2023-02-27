@@ -230,3 +230,6 @@
     border: none;
     cursor: pointer;
 }
+#imagen-prod{
+    display: none;
+}
