@@ -12,6 +12,7 @@ require_once "core/constantes.php";
     <title>Proyecto 01</title>
     <link rel="stylesheet" href="<?php echo SERVERURL ?>view/assets/css/styles.css" />
     <script src="<?php echo SERVERURL?>view/assets/js/jquery-3.6.3.min.js"></script>
+    <script src="<?php echo SERVERURL ?>view/assets/js/index.js"></script>
 </head>
 
 <body>
@@ -27,8 +28,8 @@ require_once "core/constantes.php";
     ?>
 
     <?php require_once $vistas; ?>
-
-    <script src="<?php echo SERVERURL ?>view/assets/js/index.js"></script>
+    <script src="<?php echo SERVERURL ?>view/assets/js/main.js"></script>
+<
 </body>
 
 </html>

@@ -8,3 +8,7 @@
     if (isset($_POST['update-produc'])) {
         echo $opciones->actualizarProductoC();
     }
+
+    if ($_POST['action'] == 'actualizar') {
+        echo $opciones->listarproductostabla();
+    }

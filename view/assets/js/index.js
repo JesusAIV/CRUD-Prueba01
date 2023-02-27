@@ -3,7 +3,6 @@
         $('a.editar').click(function () {
             event.preventDefault();
 
-
             var id = $(this).parents("tr").find("td").eq(0).html();
             var producto = $(this).parents("tr").find("td").eq(1).html();
             var price = $(this).parents("tr").find("td").eq(2).html();
@@ -29,22 +28,26 @@
 
         $("#imagen-prod").change(function () {
             var img = this.files[0];
-
-
-
-                var imagen = new FileReader;
-                console.log("imagen ", imagen);
-                imagen.readAsDataURL(img);
-
-                $(imagen).on("load", function (event) {
-
-                    var rutaImagen = event.target.result;
-                    $("#uppimagensrc").attr("src", rutaImagen);
-
-                })
-
-
+            var imagen = new FileReader;
+            console.log("imagen ", imagen);
+            imagen.readAsDataURL(img);
+            $(imagen).on("load", function (event) {
+                var rutaImagen = event.target.result;
+                $("#uppimagensrc").attr("src", rutaImagen);
+            })
         })
-
     });
+
+    function RegritroCategorias(){
+        $.ajax({
+            url: 'http://localhost:8085/CRUD-Prueba01/view/action/gestion.php',
+            type: 'POST',
+            dataType: 'html',
+            data: { action : 'actualizar'},
+        })
+        .done(function (resultado) {
+            $('#content-tabla').html(resultado);
+        })
+    }
+    RegritroCategorias();
 })()

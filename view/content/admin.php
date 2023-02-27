@@ -8,38 +8,7 @@
 ?>
 
 <div class="panel">
-    <div class="cont-tabla">
-        <table class="tabla-produc-admin">
-            <thead class="thead-table">
-                <tr>
-                    <th>ID</th>
-                    <th>Nombre</th>
-                    <th>Precio</th>
-                    <th>Imagen</th>
-                    <th colspan="2">Acciones</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($lista as $result){ ?>
-                <tr>
-                    <td class="center-flex"><?php echo $result -> id?></td>
-                    <td class="center-flex"><?php echo $result -> nombre; ?></td>
-                    <td class="center-flex"><?php echo $result -> precio; ?></td>
-                    <td class="table-image"><img class="image-img" src="<?php echo SERVERURL.'view/'.$result -> imagen ?>" alt=""></td>
-                    <td class="center-flex">
-                        <a href="" id="delete">
-                            <img src="<?php echo SERVERURL.'view/assets/img/svg/delete.svg' ?>" alt="">
-                        </a>
-                    </td>
-                    <td class="center-flex">
-                        <a href="" class="editar" data-id="<?php echo $result -> id ?>">
-                            <img src="<?php echo SERVERURL.'view/assets/img/svg/edit.svg' ?>" alt="">
-                        </a>
-                    </td>
-                </tr>
-                <?php } ?>
-            </tbody>
-        </table>
+    <div class="cont-tabla" id="content-tabla">
     </div>
     <div class="cont-formulario">
         <div class="formulario">
@@ -69,7 +38,7 @@
                     <img id="uppimagensrc" width="300" src="<?php echo SERVERURL.'view/assets/img/noimage.jpg' ?>" alt="">
                 </div>
                 <div class="campo campo-guardar">
-                    <input id="btn-guardar" type="submit" value="Guardar">
+                    <button id="btn-guardar">Guardar</button>
                 </div>
             </form>
         </div>

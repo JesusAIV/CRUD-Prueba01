@@ -92,4 +92,55 @@ class gestionController extends gestionModel{
         return $alerta;
     }
 
+    public function listarproductostabla(){
+        $conexion = Conexion::conectar();
+
+        $sql = "CALL ListarProductos()";
+        $query = $conexion->prepare($sql);
+        $query -> execute();
+        $resultado = $query -> fetchAll(PDO::FETCH_OBJ);
+
+        $resultadotable = "";
+
+        $resultadotable = '
+                <table class="tabla-produc-admin">
+                    <thead class="thead-table">
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Precio</th>
+                            <th>Imagen</th>
+                            <th colspan="2">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>';
+
+        foreach ($resultado as $result) {
+            $resultadotable .= '
+                        <tr>
+                            <td class="center-flex">'.$result -> id.'</td>
+                            <td class="center-flex">'.$result -> nombre.'</td>
+                            <td class="center-flex">'.$result -> precio.'</td>
+                            <td class="table-image"><img class="image-img" src="'.SERVERURL."view/".$result -> imagen.'" alt=""></td>
+                            <td class="center-flex">
+                                <a href="" id="delete">
+                                    <img src="'.SERVERURL."view/assets/img/svg/delete.svg".'" alt="">
+                                </a>
+                            </td>
+                            <td class="center-flex">
+                                <a href="" class="editar" data-id="'.$result -> id .'">
+                                    <img src="'.SERVERURL."view/assets/img/svg/edit.svg".'" alt="">
+                                </a>
+                            </td>
+                        </tr>
+            ';
+        }
+
+        $resultadotable .= '
+        </tbody>
+        </table>';
+
+        return $resultadotable;
+    }
+
 }
