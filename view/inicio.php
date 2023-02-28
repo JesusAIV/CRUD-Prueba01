@@ -5,7 +5,7 @@ require_once "core/constantes.php";
 <!DOCTYPE html>
 <html lang="es">
 
-<head>
+<head> 
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -28,8 +28,5 @@ require_once "core/constantes.php";
     ?>
 
     <?php require_once $vistas; ?>
-    <script src="<?php echo SERVERURL ?>view/assets/js/main.js"></script>
-<
 </body>
-
 </html>

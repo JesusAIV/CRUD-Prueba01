@@ -84,63 +84,94 @@ class gestionController extends gestionModel{
         if ($addProducto >= 1) { /* Si la consulta se ejecuta correctamente */
             // Dará una alerta de éxito
             $alerta = "Producto actualizado";
+            echo "<script>
+                    window.location.href = 'http://localhost:8085/CRUD-Prueba01/admin';
+                </script>";
         } else {
             // Dará una alerta de error
             $alerta = "Ocurrio un error inesperado";
+            echo "<script>
+                    window.location.href = 'http://localhost:8085/CRUD-Prueba01/admin';
+                </script>";
         }
 
         return $alerta;
     }
 
-    public function listarproductostabla(){
+    public function AgregarProducto(){
+        $nombre = $_POST['name'];
+        $precio = $_POST['price'];
+
         $conexion = Conexion::conectar();
 
-        $sql = "CALL ListarProductos()";
-        $query = $conexion->prepare($sql);
-        $query -> execute();
-        $resultado = $query -> fetchAll(PDO::FETCH_OBJ);
 
-        $resultadotable = "";
+        if($_FILES['imagen-produc']['name']){
+            $dir = "../img/laptops/";
+            $nombreArchivo = $_FILES['imagen-produc']['name'];
+            $tipo = $_FILES['imagen-produc']['type'];
+            $tipo = strtolower($tipo);
+            $extension = substr($tipo,strpos($tipo,'/')+1);
+            $name = $nombreArchivo.'-'.time().'.'.$extension;
 
-        $resultadotable = '
-                <table class="tabla-produc-admin">
-                    <thead class="thead-table">
-                        <tr>
-                            <th>ID</th>
-                            <th>Nombre</th>
-                            <th>Precio</th>
-                            <th>Imagen</th>
-                            <th colspan="2">Acciones</th>
-                        </tr>
-                    </thead>
-                    <tbody>';
+            if(!is_dir($dir)){
+                mkdir($dir, 0777, true);
+            }
 
-        foreach ($resultado as $result) {
-            $resultadotable .= '
-                        <tr>
-                            <td class="center-flex">'.$result -> id.'</td>
-                            <td class="center-flex">'.$result -> nombre.'</td>
-                            <td class="center-flex">'.$result -> precio.'</td>
-                            <td class="table-image"><img class="image-img" src="'.SERVERURL."view/".$result -> imagen.'" alt=""></td>
-                            <td class="center-flex">
-                                <a href="" id="delete">
-                                    <img src="'.SERVERURL."view/assets/img/svg/delete.svg".'" alt="">
-                                </a>
-                            </td>
-                            <td class="center-flex">
-                                <a href="" class="editar" data-id="'.$result -> id .'">
-                                    <img src="'.SERVERURL."view/assets/img/svg/edit.svg".'" alt="">
-                                </a>
-                            </td>
-                        </tr>
-            ';
+            move_uploaded_file($_FILES['imagen-produc']['tmp_name'], $dir.$name);
+
+            $directorio = $dir.$name;
+
+            $imagen = substr($directorio, 3);
         }
 
-        $resultadotable .= '
-        </tbody>
-        </table>';
+        $datosP = [
+            "nombre" => $nombre,
+            "precio" => $precio,
+            "imagen" => $imagen
+        ];
 
-        return $resultadotable;
+        // Ejecuta la función agregarPersonal obteniendo el array de datos
+        $addProducto = gestionModel::addProducto($datosP);
+
+        if ($addProducto >= 1) { /* Si la consulta se ejecuta correctamente */
+            // Dará una alerta de éxito
+            $alerta = "Producto agregado";
+            echo "<script>
+                    window.location.href = 'http://localhost:8085/CRUD-Prueba01/admin';
+                </script>";
+        } else {
+            // Dará una alerta de error
+            $alerta = "Ocurrio un error inesperado";
+            echo "<script>
+                    window.location.href = 'http://localhost:8085/CRUD-Prueba01/admin';
+                </script>";
+        }
+
+        return $alerta;
     }
 
+    public function EliminarProducto(){
+        $idproducto = $_POST['id-produc'];
+
+        $conexion = Conexion::conectar();
+
+        // Ejecuta la función agregarPersonal obteniendo el array de datos
+        $addProducto = gestionModel::deleteProducto($idproducto);
+
+        if ($addProducto >= 1) { /* Si la consulta se ejecuta correctamente */
+            // Dará una alerta de éxito
+            $alerta = "Producto eliminado";
+            echo "<script>
+                    window.location.href = 'http://localhost:8085/CRUD-Prueba01/admin';
+                </script>";
+        } else {
+            // Dará una alerta de error
+            $alerta = "Ocurrio un error inesperado";
+            echo "<script>
+                    window.location.href = 'http://localhost:8085/CRUD-Prueba01/admin';
+                </script>";
+        }
+
+        return $alerta;
+    }
 }

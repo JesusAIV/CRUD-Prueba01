@@ -1,6 +1,6 @@
 (function () {
     $(document).ready(function () {
-        $('a.editar').click(function () {
+        $('a.editar').click(function ( event ) {
             event.preventDefault();
 
             var id = $(this).parents("tr").find("td").eq(0).html();
@@ -36,18 +36,9 @@
                 $("#uppimagensrc").attr("src", rutaImagen);
             })
         })
-    });
 
-    function RegritroCategorias(){
-        $.ajax({
-            url: 'http://localhost:8085/CRUD-Prueba01/view/action/gestion.php',
-            type: 'POST',
-            dataType: 'html',
-            data: { action : 'actualizar'},
-        })
-        .done(function (resultado) {
-            $('#content-tabla').html(resultado);
-        })
-    }
-    RegritroCategorias();
+        $('#delete').click(function ( event ) {
+            event.preventDefault();
+        });
+    });
 })()

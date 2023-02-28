@@ -7,7 +7,8 @@
 }
 .header{
     width: 100%;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
+    background-color: #00CED1;
 }
 .header-nav{
     width: 100%;
@@ -19,6 +20,7 @@
 .nav-logo{
     font-size: 30px;
     font-weight: 700;
+    color: #ffffff;
 }
 .nav-menu{
     display: flex;
@@ -27,6 +29,24 @@
 }
 .nav-menu-a{
     font-size: 20px;
+    color: #F0FFF0;
+}
+.nav-menu-a:hover{
+    background-color: #333333;
+    padding: 5px;
+    border-radius: 10px;
+}
+.principios{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.principios p{
+    font-size: 25px;
+    font-weight: 700;
+    border-bottom: 1px solid #000000;
+    padding-bottom: 2px;
 }
 .nav-login{
     border-radius: 20px;
@@ -90,7 +110,7 @@
 }
 .panel{
     width: 90%;
-    margin: 20px auto;
+    margin: 30px auto;
     display: grid;
     grid-template-columns: auto auto;
     gap: 15px;
@@ -232,4 +252,150 @@
 }
 #imagen-prod{
     display: none;
+}
+#delete{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+.footer{
+    background-color: #00CED1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 20px;
+    color: #ffffff;
+}
+.redes-s{
+    width: 20px;
+}
+.redes-s img{
+    width: 100%;
+}
+.logo-footer{
+    font-size: 30px;
+    font-weight: 700;
+    color: #ffffff;
+}
+.footer-list{
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 20px;
+}
+.redes-cont{
+    margin-top: 10px;
+    display: flex;
+    gap: 20px;
+}
+.login{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: antiquewhite;
+}
+.campos-form{
+    background-color: #00CED1;
+    border: 1px solid #000000;
+    padding: 10px;
+    border-radius: 20px;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 15px;
+    height: min-content;
+    width: 400px;
+    border-radius: 25px;
+    background-color: #ffff;
+    padding: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 2);
+    text-align: center;
+}
+.campos-placeholder, .button-form{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 10px;
+}
+.button-form button{
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+}
+.campos-placeholder input{
+    padding: 5px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+}
+.input-field{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+.regresar{
+    padding: 10px;
+    background-color: #6176eb;
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 25px;
+}
+
+.acction{
+    width: 90%;
+    margin: 30px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logout{
+    padding: 10px;
+    background-color: #d13e1d;
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 25px;
+    border: none;
+    cursor: pointer;
+}
+form .campos-placeholder{
+    margin: 18px 0;
+}
+
+form .campos-placeholder label {
+    display: block;
+    font-size: 20px; 
+    color: #404040;
+}
+
+form .campos-placeholder input {
+    width: 100%;
+    height: 40px;
+    margin-top: 6px;
+    padding: 0 12px 0 34px;
+    border: 2px solid #c4c4c4;
+    border-radius: 20px;
+    font-size: 18px;
+    color: #404040;
+    transition: 1ms;
+}
+
+
+form .campos-placeholder input:focus{
+    border-color: #124ce7;
+    box-shadow: 0 0 12px #bbd3ff;
+}
+
+
+form .campos-placeholder input:valid{
+    border-color: #124ce7;
+    background: #e4edff;
+}
+
+
+.campos-placeholder i {
+    position: absolute;
+    color: #404040;
+    transform: translateX(12px) translateY(16px);
+    font-size: 20px;
 }

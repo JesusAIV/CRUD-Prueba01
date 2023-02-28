@@ -9,6 +9,10 @@
         echo $opciones->actualizarProductoC();
     }
 
-    if ($_POST['action'] == 'actualizar') {
-        echo $opciones->listarproductostabla();
+    if (isset($_POST['save-produc'])) {
+        echo $opciones->AgregarProducto();
+    }
+
+    if (isset($_POST['deleteprod'])) {
+        echo $opciones->EliminarProducto();
     }

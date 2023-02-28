@@ -7,8 +7,53 @@
     $lista = $gestion->ListarProductos();
 ?>
 
+<div class="acction">
+    <div>
+        <a href="<?php echo SERVERURL?>inicio" class="regresar">Inicio</a>
+    </div>
+    <div>
+        <a href="<?php echo SERVERURL.'view/action/logout.php' ?>" class="logout" name="log">Cerrar sesion</a>
+    </div>
+</div>
+
 <div class="panel">
     <div class="cont-tabla" id="content-tabla">
+        <table class="tabla-produc-admin">
+            <thead class="thead-table">
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Imagen</th>
+                    <th colspan="2">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+            <?php foreach ($lista as $result) { ?>
+                <tr>
+                    <td class="center-flex"><?php echo $result -> id ?></td>
+                    <td class="center-flex"><?php echo $result -> nombre ?></td>
+                    <td class="center-flex"><?php echo $result -> precio ?></td>
+                    <td class="table-image"><img class="image-img" src="<?php echo SERVERURL.'view/'.$result -> imagen ?>" alt=""></td>
+                    <td class="center-flex">
+                        <form action="<?php echo SERVERURL.'view/action/gestion.php' ?>" method="POST" enctype="multipart/form-data">
+                            <button href="" id="delete" name="deleteprod">
+                                <input type="hidden" value="<?php echo $result -> id ?>" name="id-produc">
+                                <input type="hidden" >
+                                <img src="<?php echo SERVERURL.'view/assets/img/svg/delete.svg' ?>" alt="">
+                            </button>
+                        </form>
+                    </td>
+                    <td class="center-flex">
+                        <a href="" class="editar" data-id="'.$result -> id .'">
+                            <img src="<?php echo SERVERURL.'view/assets/img/svg/edit.svg' ?>" alt="">
+                        </a>
+                    </td>
+                </tr>
+            
+            <?php } ?>
+            </tbody>
+        </table>
     </div>
     <div class="cont-formulario">
         <div class="formulario">
@@ -38,7 +83,7 @@
                     <img id="uppimagensrc" width="300" src="<?php echo SERVERURL.'view/assets/img/noimage.jpg' ?>" alt="">
                 </div>
                 <div class="campo campo-guardar">
-                    <button id="btn-guardar">Guardar</button>
+                    <button id="btn-guardar" name="save-produc">Guardar</button>
                 </div>
             </form>
         </div>

@@ -1,13 +1,17 @@
-<div>
-    <form class="" action="" method="POST">
+<div class="login">
+    <form class="" action="" method="POST" class="login-form">
         <div class="campos-form">
             <div class="campos-placeholder">
-                <input type="text" name="usuario" id="usuario" required>
-                <label for="usuario">usuario</label>
+                <div class="input-field">
+                    <label for="usuario">Usuario</label>
+                    <input type="text" name="usuario" id="usuario" required>
+                </div>
             </div>
             <div class="campos-placeholder">
-                <input type="password" name="password" id="password" required>
-                <label for="password">Contraseña</label>
+                <div class="input-field">
+                    <label for="password">Contraseña</label>
+                    <input type="password" name="password" id="password" required>
+                </div>
             </div>
             <div class="button-form btn1">
                 <button type="submit" name="iniciarsesion">Iniciar sesión</button>

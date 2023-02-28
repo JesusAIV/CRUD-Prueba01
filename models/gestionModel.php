@@ -18,7 +18,33 @@
             $imagen=$datos['imagen'];
             $precio=$datos['precio'];
 
-            $sql = "CALL UpdateProducto('$idproducto', '$nombre', '$imagen', '$precio')";
+            $sql = "CALL UpdateProducto($idproducto, '$nombre', '$imagen', '$precio')";
+
+            $result = $conexion->prepare($sql);
+            $result -> execute();
+
+            return $result;
+        }
+
+        protected function addProducto($datos){
+            $conexion = Conexion::conectar();
+
+            $nombre=$datos['nombre'];
+            $imagen=$datos['imagen'];
+            $precio=$datos['precio'];
+
+            $sql = "CALL AgregarProducto('$nombre', '$imagen', '$precio')";
+
+            $result = $conexion->prepare($sql);
+            $result -> execute();
+
+            return $result;
+        }
+
+        protected function deleteProducto($id){
+            $conexion = Conexion::conectar();
+
+            $sql = "CALL EliminarProducto('$id')";
 
             $result = $conexion->prepare($sql);
             $result -> execute();

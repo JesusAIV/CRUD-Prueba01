@@ -26,6 +26,8 @@
 
             $row = $datosCuenta->fetchAll(PDO::FETCH_OBJ);
 
+            foreach ($row as $key){}
+
             if(empty($usuario) || empty($password)){
                 $alerta=[
                     "Alerta"=>"simple",
@@ -37,7 +39,7 @@
             }else{
                 if($rowCount==1){
                     session_start();
-                    $_SESSION['usuario']=$row['usuario'];
+                    $_SESSION['usuario']= $key -> usuario;
 
                     $url = "admin";
 
